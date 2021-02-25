@@ -22,6 +22,7 @@ The state_machine shifts the three states namely :
 **play** : In play state the robot receive a command from a preson and goes there
 
 ## State diagram
+![SD](https://user-images.githubusercontent.com/62798224/99132134-7c821280-2615-11eb-97a4-5b45a627cf05.png)
 
 
 **sleep** : In sleep state the robot dog goes to its home an sleeps after certain time it goes to the normal state
