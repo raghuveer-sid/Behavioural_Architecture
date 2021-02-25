@@ -22,7 +22,6 @@ The state_machine shifts the three states namely :
 **play** : In play state the robot receive a command from a preson and goes there
 
 ## State diagram
-![SD](https://user-images.githubusercontent.com/62798224/99132134-7c821280-2615-11eb-97a4-5b45a627cf05.png)
 
 
 **sleep** : In sleep state the robot dog goes to its home an sleeps after certain time it goes to the normal state
@@ -31,18 +30,18 @@ The state_machine shifts the three states namely :
 
 ## Package and files list
 
-![tree](https://user-images.githubusercontent.com/62798224/99132216-b3582880-2615-11eb-8ce5-e5bbe5b5a5cd.png)
+
 
 Along with those files a zip file named doc is present.which contains the documentation from Doxygen.General folder could not be uploaded since it had too many files.
 
 ## Installation and running the code
 *'Clone the repository'*
 ```
-git clone https://github.com/raghuveer-sid/EXPRL_Assignment_1-
+git clone https://github.com/raghuveer-sid/exp_assignment2
 ```
 *'run roscore'*
 ```
-roscorehttps://www.youtube.com/watch?v=3fv4n6kj4xA&list=RD_PBlykN4KIY&index=8
+roscore
 ```
 *'open new terminal'*
 *'goto specific directory'*
