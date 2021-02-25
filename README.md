@@ -4,7 +4,13 @@ This is the assgnment of the lab 2 of Experimental robotics lab simulating a pet
 
 ## Software architecture
 
+In this assignment this robot description has better maneuverability
+
 ![Screenshot from 2021-02-25 21-07-06](https://user-images.githubusercontent.com/62798224/109227459-a7593680-77c0-11eb-9251-7bf5a30bcf5e.png)
+
+Than these two
+
+
 ![Screenshot from 2021-02-25 21-05-03](https://user-images.githubusercontent.com/62798224/109227470-aaecbd80-77c0-11eb-8247-4896180f2cbe.png)
 ![Screenshot from 2021-02-25 21-04-24](https://user-images.githubusercontent.com/62798224/109227474-ade7ae00-77c0-11eb-802c-baf1b46228d6.png)
 
