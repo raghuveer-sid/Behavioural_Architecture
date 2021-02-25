@@ -30,6 +30,10 @@ The state_machine shifts the three states namely :
 **normal** : In normal state the robot just roams arround untill it receives a command to play or it goes to sleep again
 **play** : In play state the robot receive a command from a preson and goes there
 
+* process_image : This is to recognise the ball.
+
+Along with those files a zip file named doc is present.which contains the documentation from Doxygen.General folder could not be uploaded since it had too many files.
+
 ## State diagram
 ![SD](https://user-images.githubusercontent.com/62798224/99132134-7c821280-2615-11eb-97a4-5b45a627cf05.png)
 
@@ -38,12 +42,6 @@ The state_machine shifts the three states namely :
 **normal** : In normal state the robot just roams arround untill it receives a command to play or it goes to sleep again
 **play** : In play state the robot receive a command from a preson and goes there
 
-## Package and files list
-
-
-
-
-Along with those files a zip file named doc is present.which contains the documentation from Doxygen.General folder could not be uploaded since it had too many files.
 
 ## Installation and running the code
 *'Clone the repository'*
@@ -76,7 +74,7 @@ catkin_make
 ```
 *'launch file'*
 ```
-roslaunch exp_assignment gazebo_world.launch
+roslaunch exp_assignment2 gazebo_world.launch
 ```
 ## Working
 
