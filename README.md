@@ -72,7 +72,7 @@ roslaunch exp_assignment gazebo_world.launch
 ## Working
 
 It is as simple as it sounds.Initially the dog wakes up and goes to the normal state where it moves randomly untill it receives a command from a person if it receives the command then it goes to the command point but if it does not receive a command after some time then the dog will go to sleep
-The layout is set to **50x50**..The person can move from one place to another randomly.
+The layout is set to **8x8**..The person can move from one place to another randomly.
 
 ## Limitations and Possible improvements
 
