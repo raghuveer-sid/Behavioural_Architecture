@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<robot>
+  <!-- materials -->
+ 
+  
+  <gazebo reference="link_chassis">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+
+  <gazebo reference="link_back_left_wheel">
+    <material>Gazebo/Blue</material>
+    <!--
+    <kp>1000000.0</kp> 
+    <kd>100.0</kd>
+    <mu1>1.0</mu1> 
+    <mu2>1.0</mu2>-->
+  </gazebo>
+  <gazebo reference="link_back_right_wheel">
+    <material>Gazebo/Blue</material>
+    <!--
+    <kp>1000000.0</kp> 
+    <kd>100.0</kd>
+    <mu1>1.0</mu1> 
+    <mu2>1.0</mu2>-->
+  </gazebo>
+  <!--
+  <gazebo reference="link_front_left_wheel">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="link_front_right_wheel">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  -->  
+    <gazebo reference="neck_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <gazebo reference="neck_base_link">
+    <material>Gazebo/Red</material>
+  </gazebo>  
+
+
+  <gazebo>
+    <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
+      <legacyMode>true</legacyMode>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>20</updateRate>
+      <leftJoint>joint_back_left_wheel</leftJoint>
+      <rightJoint>joint_back_right_wheel</rightJoint>
+      <wheelSeparation>0.2</wheelSeparation>
+      <wheelDiameter>0.2</wheelDiameter>
+      <torque>0.1</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>link_chassis</robotBaseFrame>
+    </plugin>
+  </gazebo>
+
+
+<!--
+  <gazebo>
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+      <updateRate>100.0</updateRate>
+      <legacyMode>true</legacyMode>
+      <robotNamespace>/robot</robotNamespace>
+      <leftFrontJoint>joint_front_left_wheel</leftFrontJoint>
+      <rightFrontJoint>joint_front_right_wheel</rightFrontJoint>
+      <leftRearJoint>joint_back_left_wheel</leftRearJoint>
+      <rightRearJoint>joint_back_right_wheel</rightRearJoint>
+      <wheelSeparation>0.3</wheelSeparation>
+      <wheelDiameter>0.2</wheelDiameter>
+      <robotBaseFrame>link_chassis</robotBaseFrame>
+      <torque>10000</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <broadcastTF>true</broadcastTF>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+    </plugin>
+  </gazebo>
+  -->
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+     <!-- <robotNamespace>/robot</robotNamespace> -->
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+
+   <!-- camera -->
+  <gazebo reference="camera_link">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>800</width>
+          <height>800</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+		    <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo> 
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/robot</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+
+
+</robot>
