@@ -9,11 +9,11 @@ This is the assgnment of the lab 2 of Experimental robotics lab simulating a pet
 *'person_command'*
 This node publishes a topic command. The user gives a command either **sleep*** or **play**.If its play a random coordinate is generated and assigned so that the dog will go there.
 
-*'getpoint'*
-This note publishes the commad_point and gives the location to which the person is trying to point
+*'drive_bot'*
+This component is responsible for making the pet robot navigate in the modelled world based on the pos(target position) it receives.
 
-*'gotopoint'*
-This is where the robot dog recieves the location from the person and goes there also while publishing it
+*'go_to_point_ball'*
+This component is responsible for making the green ball navigate in the modelled world based on the pos(target position) it receives.
 
 *'state_machine'*
 The state_machine shifts the three states namely : 
@@ -33,6 +33,7 @@ The state_machine shifts the three states namely :
 
 
 
+
 Along with those files a zip file named doc is present.which contains the documentation from Doxygen.General folder could not be uploaded since it had too many files.
 
 ## Installation and running the code
@@ -47,9 +48,9 @@ roscore
 *'open new terminal'*
 *'goto specific directory'*
 ```
-cd my_dog/src
+cd exp_assignment2
 ```
-*'Give permissions'*
+*'Give permissions (not neede unless an error comes up)'*
 ```
 chmod +x state_machine.py
 chmod +x person_command.py
@@ -66,7 +67,7 @@ catkin_make
 ```
 *'launch file'*
 ```
-roslaunch my_dog main.launch
+roslaunch exp_assignment gazebo_world.launch
 ```
 ## Working
 
@@ -75,11 +76,9 @@ The layout is set to **50x50**..The person can move from one place to another ra
 
 ## Limitations and Possible improvements
 
-* The time difference to travel the command point is calculated so just 5 seconds is given.
-* The dog could have gotten tired in normal or play so it could be sent to home.
-* The robot dog could have receive command externally.
-* The verbal interaction between person and robot dog is limited.
-* Could be implemented in gazebo for a good vizuvalization.
+* The main goal was to make the progtram work completely on its ow but I could not do it.The part where the ball goes to different places is not implimented correctly so the followig topic is published in adifferent terminal to make it u for it. *'/reaching_goal/goal'*.
+
+* One more proble is the robot description the code works well with basic design but when neck connection is added the robot only looks at human.This is something that should be fixed.
 
 ## Author and contact
 
